@@ -1,0 +1,17 @@
+# Instrucciones personales de Claude Code
+CLAUDE.local.md
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Herramientas locales
+node_modules/
+.vscode/
+
+
+# Archivos de trabajo con Claude Code (solo en esta computadora)
+CLAUDE.md
+CLAUDE.local.md
+docs/
+design/referencia/
