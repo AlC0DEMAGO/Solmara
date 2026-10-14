@@ -1,0 +1,112 @@
+/* El header flota sobre el hero para que el mismo degradado quede detrás de los dos. */
+.encabezado {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding-inline: var(--margen-pagina);
+}
+
+.encabezado__inicio {
+  display: block;
+}
+
+.encabezado__logo {
+  width: auto;
+  height: 52px;
+}
+
+.encabezado__boton-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--area-tactil);
+  height: var(--area-tactil);
+  padding: 0;
+  border: 1px solid var(--color-borde-fuerte);
+  border-radius: var(--radio-sm);
+  background-color: transparent;
+  color: var(--color-texto);
+}
+
+.encabezado__icono--cerrar,
+.encabezado__boton-menu[aria-expanded="true"] .encabezado__icono--abrir {
+  display: none;
+}
+
+.encabezado__boton-menu[aria-expanded="true"] .encabezado__icono--cerrar {
+  display: block;
+}
+
+/* Sin display propio: así el atributo hidden del HTML lo oculta hasta que menu.js lo abra. */
+.menu {
+  position: absolute;
+  top: 100%;
+  right: var(--margen-pagina);
+  left: var(--margen-pagina);
+  padding: var(--espacio-xs);
+  border-radius: var(--radio-lg);
+  background-color: var(--color-crema);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.menu__lista {
+  padding: 0;
+  list-style: none;
+}
+
+.menu__item + .menu__item {
+  border-top: 1px solid var(--color-borde);
+}
+
+.menu__enlace {
+  display: flex;
+  align-items: center;
+  min-height: var(--alto-control);
+  padding-inline: var(--espacio-sm);
+  border-radius: var(--radio-sm);
+  color: var(--color-texto);
+  font: var(--texto-boton);
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .menu__enlace:hover {
+    background-color: var(--color-hover-contorno);
+  }
+}
+
+.menu__accion {
+  margin-top: var(--espacio-sm);
+}
+
+.hero {
+  overflow: hidden;
+  /* 96 px = los 72 del header que flota encima + los 24 de la maqueta. */
+  padding: var(--espacio-3xl) 0 0;
+  border-radius: 0 0 var(--radio-xl) var(--radio-xl);
+}
+
+.hero__contenido {
+  row-gap: var(--espacio-md);
+  padding-inline: var(--margen-pagina);
+  padding-bottom: var(--espacio-xl);
+}
+
+.hero__acciones {
+  display: grid;
+  gap: var(--espacio-sm);
+  margin-top: var(--espacio-xs);
+}
+
+/* La máscara solo usa la opacidad: el negro nunca se ve, funde la imagen con el cielo. */
+.hero__imagen {
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 28%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 28%);
+}

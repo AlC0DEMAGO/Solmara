@@ -86,7 +86,8 @@ a {
   outline-color: var(--color-amarillo);
 }
 
-.seccion--cielo :focus-visible {
+.seccion--cielo :focus-visible,
+.encabezado :focus-visible {
   outline-color: var(--color-verde-oscuro);
 }
 

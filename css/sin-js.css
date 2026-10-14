@@ -1,0 +1,5 @@
+/* Sin JavaScript el panel del menú no puede abrirse: se oculta el botón para no
+   ofrecer un control que no hace nada. La navegación queda en el hero y el pie. */
+.encabezado__boton-menu {
+  display: none;
+}
