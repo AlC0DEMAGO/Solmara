@@ -1,0 +1,104 @@
+:root {
+  /* Colores de marca */
+  --color-crema: #FFFBF0;
+  --color-arena: #F3ECD9;
+  --color-verde-bosque: #1B6B4A;
+  --color-verde-oscuro: #0B2B1F;
+  --color-amarillo: #FFB703;
+
+  /* Colores semánticos */
+  --color-error: #B3261E;
+  --color-texto: var(--color-verde-oscuro);
+  --color-texto-claro: var(--color-crema);
+  --color-texto-claro-suave: rgba(255, 251, 240, 0.82);
+  --color-borde: rgba(11, 43, 31, 0.15);
+  --color-borde-claro: rgba(255, 251, 240, 0.24);
+
+  /* Cielos e ilustraciones */
+  --cielo-rosa: #D4A59B;
+  --cielo-durazno: #D2B298;
+  --cielo-amanecer-claro: #F3D9C4;
+  --cielo-mediodia: #FFE7A9;
+  --cielo-mediodia-claro: #FFF6DC;
+  --cielo-atardecer: #145238;
+  --colina-noche: #0E3A29;
+
+  /* Tipografía */
+  --fuente-titulos: 'Outfit', system-ui, sans-serif;
+  --fuente-texto: 'Inter', system-ui, sans-serif;
+  --texto-display: 700 2.5rem/2.75rem var(--fuente-titulos);   /* 40/44 */
+  --texto-h2: 700 2rem/2.25rem var(--fuente-titulos);          /* 32/36 */
+  --texto-h3: 600 1.25rem/1.75rem var(--fuente-titulos);       /* 20/28 */
+  --texto-h3-grande: 600 1.5rem/2rem var(--fuente-titulos);    /* 24/32 */
+  --texto-cita: 600 1.125rem/1.625rem var(--fuente-titulos);   /* 18/26 */
+  --texto-cuerpo: 400 1rem/1.5rem var(--fuente-texto);         /* 16/24 */
+  --texto-pequeno: 400 0.875rem/1.25rem var(--fuente-texto);   /* 14/20 */
+  --texto-etiqueta: 500 0.875rem/1.25rem var(--fuente-texto);  /* 14/20 */
+  --texto-mini: 400 0.75rem/1rem var(--fuente-texto);          /* 12/16 */
+  --texto-boton: 600 1rem/1.5rem var(--fuente-texto);          /* 16/24 */
+  --texto-cifra-xl: 700 3.5rem/3.5rem var(--fuente-titulos);   /* 56/56 */
+  --texto-cifra-lg: 700 2.5rem/2.75rem var(--fuente-titulos);  /* 40/44 */
+  --texto-cifra-md: 700 2rem/2.25rem var(--fuente-titulos);    /* 32/36 */
+  --texto-cifra-sm: 700 1.5rem/2rem var(--fuente-titulos);     /* 24/32 */
+  --tracking-titulos: -0.02em;
+
+  /* Espaciado (escala de 8) */
+  --espacio-2xs: 4px;
+  --espacio-xs: 8px;
+  --espacio-sm: 16px;
+  --espacio-md: 24px;
+  --espacio-lg: 32px;
+  --espacio-xl: 48px;
+  --espacio-2xl: 64px;
+  --espacio-3xl: 96px;
+
+  /* Radios */
+  --radio-sm: 8px;
+  --radio-md: 16px;
+  --radio-lg: 24px;
+  --radio-xl: 32px;
+
+  /* Sombras */
+  --sombra-tarjeta: 0 12px 32px rgba(11, 43, 31, 0.16);
+  --sombra-recibo: drop-shadow(0 8px 16px rgba(11, 43, 31, 0.18));
+  --sombra-recibo-oscuro: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.25));
+
+  /* Medidas de interfaz */
+  --alto-boton: 56px;
+  --alto-control: 48px;
+  --area-tactil: 44px;
+
+  /* Grilla */
+  --contenedor-max: 1200px;
+  --margen-pagina: 16px;
+  --columnas: 4;
+  --separacion: 16px;
+  --padding-seccion: var(--espacio-2xl);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --margen-pagina: 32px;
+    --columnas: 8;
+    --separacion: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --columnas: 12;
+    --padding-seccion: var(--espacio-3xl);
+    --texto-display: 700 3.5rem/3.75rem var(--fuente-titulos); /* 56/60 */
+    --texto-h2: 700 2.5rem/2.75rem var(--fuente-titulos);      /* 40/44 */
+  }
+}
+
+/* Agregados en la Fase 1 (apartado 2 de la especificación): valores que los
+   componentes necesitan y que el bloque original no tenía. */
+:root {
+  --color-hover-contorno: rgba(11, 43, 31, 0.06);
+  --color-borde-claro-fuerte: rgba(255, 251, 240, 0.4);
+  --color-crema-translucida: rgba(255, 251, 240, 0.92);
+  --color-borde-fuerte: rgba(11, 43, 31, 0.3);
+  --texto-insignia: 700 1rem/1.5rem var(--fuente-titulos); /* 16/24 */
+}
