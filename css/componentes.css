@@ -60,6 +60,10 @@
   .boton--contorno:hover {
     background-color: var(--color-hover-contorno);
   }
+
+  .boton--contorno-claro:hover {
+    border-color: var(--color-crema);
+  }
 }
 
 .selector {
@@ -81,6 +85,13 @@
 .selector__opcion[aria-pressed="true"] {
   background-color: var(--color-verde-oscuro);
   color: var(--color-texto-claro);
+}
+
+/* La opción elegida no cambia: un fondo tenue sobre el verde oscuro no se notaría. */
+@media (hover: hover) {
+  .selector__opcion:not([aria-pressed="true"]):hover {
+    background-color: var(--color-hover-contorno);
+  }
 }
 
 .campo__etiqueta {

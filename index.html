@@ -31,15 +31,49 @@
   <link rel="stylesheet" href="css/secciones/preguntas.css">
   <link rel="stylesheet" href="css/secciones/cotizacion.css">
   <link rel="stylesheet" href="css/secciones/pie-de-pagina.css">
+  <noscript><link rel="stylesheet" href="css/sin-js.css"></noscript>
 
   <script type="module" src="js/main.js"></script>
 </head>
 <body>
-  <header></header>
+  <header class="encabezado">
+    <a class="encabezado__inicio" href="#inicio">
+      <img class="encabezado__logo" src="assets/logo/logo-solmara-sobre-rosa.png" alt="Solmara" width="540" height="176">
+    </a>
+    <button type="button" class="encabezado__boton-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+      <svg class="encabezado__icono encabezado__icono--abrir" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="7" x2="21" y2="7"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="17" x2="21" y2="17"/>
+      </svg>
+      <svg class="encabezado__icono encabezado__icono--cerrar" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="6" y1="6" x2="18" y2="18"/>
+        <line x1="18" y1="6" x2="6" y2="18"/>
+      </svg>
+    </button>
+    <nav class="menu" id="menu-principal" aria-label="Principal" hidden>
+      <ul class="menu__lista">
+        <li class="menu__item"><a class="menu__enlace" href="#calculadora">Calculadora</a></li>
+        <li class="menu__item"><a class="menu__enlace" href="#como-funciona">Cómo funciona</a></li>
+        <li class="menu__item"><a class="menu__enlace" href="#proyectos">Proyectos</a></li>
+        <li class="menu__item"><a class="menu__enlace" href="#paquetes">Paquetes</a></li>
+        <li class="menu__item"><a class="menu__enlace" href="#preguntas">Preguntas</a></li>
+      </ul>
+      <a class="boton boton--primario boton--bloque menu__accion" href="#cotizacion">Agenda tu visita</a>
+    </nav>
+  </header>
 
   <main>
-    <section id="inicio" aria-labelledby="inicio-titulo">
-      <h1 id="inicio-titulo">Tu casa, con energía del sol</h1>
+    <section id="inicio" class="seccion seccion--cielo hero" aria-labelledby="inicio-titulo">
+      <div class="contenedor grilla hero__contenido">
+        <h1 id="inicio-titulo">Tu casa, con energía del sol</h1>
+        <p>Instalamos paneles solares y te acompañamos desde la visita hasta tu primer recibo con ahorro.</p>
+        <div class="hero__acciones">
+          <a class="boton boton--oscuro boton--bloque" href="#calculadora">Calcula tu ahorro</a>
+          <a class="boton boton--contorno boton--bloque" href="#como-funciona">Cómo funciona</a>
+        </div>
+      </div>
+      <img class="hero__imagen" src="assets/img/hero-casa.jpg" alt="Casa familiar con paneles solares en el techo al atardecer" width="1024" height="765" fetchpriority="high">
     </section>
 
     <section id="calculadora" aria-labelledby="calculadora-titulo">
