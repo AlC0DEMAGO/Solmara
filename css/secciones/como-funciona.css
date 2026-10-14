@@ -1,0 +1,107 @@
+.como-funciona__intro {
+  margin-top: var(--espacio-sm);
+}
+
+/* Al quitar las viñetas, Safari deja de anunciar la lista con VoiceOver; por eso el
+   <ol> lleva role="list" en el HTML. */
+.como-funciona__pasos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-sm);
+  margin-top: var(--espacio-lg);
+  padding: 0;
+  list-style: none;
+}
+
+.paso {
+  overflow: hidden;
+  border-radius: var(--radio-lg);
+  background-color: var(--color-arena);
+}
+
+.paso--atardecer {
+  background-color: var(--color-verde-oscuro);
+  color: var(--color-texto-claro);
+}
+
+.paso__escena {
+  width: 100%;
+  height: auto;
+}
+
+.paso__cuerpo {
+  display: grid;
+  grid-template-columns: var(--espacio-lg) minmax(0, 1fr);
+  column-gap: var(--espacio-sm);
+  padding: var(--espacio-md);
+}
+
+/* 2 px: centra la primera línea del título (28 px) con la insignia (32 px). */
+.paso__titulo {
+  margin-top: calc(var(--espacio-2xs) / 2);
+}
+
+.paso__texto {
+  margin-top: var(--espacio-xs);
+}
+
+.paso--atardecer .paso__texto {
+  color: var(--color-texto-claro-suave);
+}
+
+/* La forma de las escenas viene de la maqueta y el color, de los tokens: fill, stroke
+   y stop-color son propiedades de CSS, así que también los degradados del SVG los usan. */
+.escena__sol {
+  fill: var(--color-amarillo);
+}
+
+.escena__rayos {
+  stroke: var(--color-amarillo);
+}
+
+.escena__brillo-centro {
+  stop-color: var(--color-amarillo);
+  stop-opacity: 0.55;
+}
+
+.escena__brillo-borde {
+  stop-color: var(--color-amarillo);
+  stop-opacity: 0;
+}
+
+.escena__colina {
+  fill: var(--color-verde-bosque);
+}
+
+.escena__estrellas {
+  fill: var(--color-crema);
+  fill-opacity: 0.6;
+}
+
+.paso--amanecer .escena__cielo-arriba {
+  stop-color: var(--cielo-rosa);
+}
+
+.paso--amanecer .escena__cielo-abajo {
+  stop-color: var(--cielo-amanecer-claro);
+}
+
+.paso--mediodia .escena__cielo-arriba {
+  stop-color: var(--cielo-mediodia);
+}
+
+.paso--mediodia .escena__cielo-abajo {
+  stop-color: var(--cielo-mediodia-claro);
+}
+
+.paso--atardecer .escena__cielo-arriba {
+  stop-color: var(--color-verde-oscuro);
+}
+
+.paso--atardecer .escena__cielo-abajo {
+  stop-color: var(--cielo-atardecer);
+}
+
+.paso--atardecer .escena__colina {
+  fill: var(--colina-noche);
+}
