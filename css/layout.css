@@ -1,0 +1,37 @@
+.contenedor {
+  width: 100%;
+  max-width: var(--contenedor-max);
+  margin-inline: auto;
+}
+
+/* --columnas y --separacion cambian en tokens.css a 768 y 1024 px, así que la
+   grilla pasa de 4 a 8 y a 12 columnas sin media queries aquí. */
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(var(--columnas), minmax(0, 1fr));
+  column-gap: var(--separacion);
+}
+
+/* En móvil todo ocupa el ancho completo; cada sección reparte columnas en escritorio. */
+.grilla > * {
+  grid-column: 1 / -1;
+}
+
+.seccion {
+  padding-block: var(--padding-seccion);
+  padding-inline: var(--margen-pagina);
+  scroll-margin-top: var(--espacio-sm);
+}
+
+.seccion--oscura {
+  background-color: var(--color-verde-oscuro);
+  color: var(--color-texto-claro);
+}
+
+.seccion--cielo {
+  background-image: linear-gradient(to bottom, var(--cielo-rosa), var(--cielo-durazno));
+}
+
+.seccion--redondeada {
+  border-radius: var(--radio-xl) var(--radio-xl) 0 0;
+}
