@@ -1,0 +1,256 @@
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-xs);
+  min-height: var(--alto-boton);
+  /* La maqueta mide 56 px de alto: con 16 px arriba y abajo más el borde saldrían 59.
+     El min-height da los 56 y este padding solo actúa si el texto ocupa dos líneas. */
+  padding: var(--espacio-xs) var(--espacio-md);
+  border: 1.5px solid transparent;
+  border-radius: var(--radio-sm);
+  background-color: transparent;
+  font: var(--texto-boton);
+  text-align: center;
+  text-decoration: none;
+}
+
+.boton--primario {
+  background-color: var(--color-amarillo);
+  color: var(--color-texto);
+}
+
+.boton--oscuro {
+  background-color: var(--color-verde-oscuro);
+  color: var(--color-texto-claro);
+}
+
+.boton--secundario {
+  background-color: var(--color-verde-bosque);
+  color: var(--color-texto-claro);
+}
+
+.boton--contorno {
+  border-color: var(--color-verde-oscuro);
+  color: var(--color-texto);
+}
+
+.boton--contorno-claro {
+  border-color: var(--color-borde-claro-fuerte);
+  color: var(--color-texto-claro);
+}
+
+.boton--bloque {
+  display: flex;
+  width: 100%;
+}
+
+/* Solo en dispositivos con puntero: en pantallas táctiles el hover se queda
+   "pegado" después de tocar el botón. */
+@media (hover: hover) {
+  .boton--primario:hover {
+    box-shadow: inset 0 0 0 2px var(--color-verde-oscuro);
+  }
+
+  .boton--oscuro:hover,
+  .boton--secundario:hover {
+    box-shadow: inset 0 0 0 2px var(--color-amarillo);
+  }
+
+  .boton--contorno:hover {
+    background-color: var(--color-hover-contorno);
+  }
+}
+
+.selector {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--espacio-xs);
+}
+
+.selector__opcion {
+  min-height: var(--alto-control);
+  padding: 0 var(--espacio-2xs);
+  border: 1.5px solid var(--color-verde-oscuro);
+  border-radius: var(--radio-sm);
+  background-color: transparent;
+  color: var(--color-texto);
+  font: var(--texto-boton);
+}
+
+.selector__opcion[aria-pressed="true"] {
+  background-color: var(--color-verde-oscuro);
+  color: var(--color-texto-claro);
+}
+
+.campo__etiqueta {
+  display: block;
+  margin-bottom: var(--espacio-xs);
+  font: var(--texto-etiqueta);
+}
+
+.campo__control {
+  display: block;
+  width: 100%;
+  min-height: var(--alto-boton);
+  /* Sin padding vertical: el navegador centra el texto del input, y así mide
+     56 px como en la maqueta (con 16 px arriba y abajo saldrían 58). */
+  padding: 0 var(--espacio-sm);
+  border: 1px solid var(--color-verde-oscuro);
+  border-radius: var(--radio-sm);
+  background-color: var(--color-crema);
+  color: var(--color-texto);
+  font: var(--texto-cuerpo);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Firefox atenúa el placeholder por defecto; sin opacity: 1 bajaría el contraste. */
+.campo__control::placeholder {
+  color: var(--color-verde-bosque);
+  opacity: 1;
+}
+
+/* El foco se ve como un borde de 3 px, pero es un outline hacia adentro: si el
+   borde creciera, el texto del campo brincaría 2 px al recibir el foco. */
+.campo__control:focus-visible {
+  outline: 3px solid var(--color-verde-bosque);
+  outline-offset: -3px;
+}
+
+/* La sombra interior suma 1 px al borde de 1 px sin mover el contenido. */
+.campo__control[aria-invalid="true"] {
+  border-color: var(--color-error);
+  box-shadow: inset 0 0 0 1px var(--color-error);
+}
+
+.campo__ayuda {
+  margin-top: var(--espacio-xs);
+  font: var(--texto-pequeno);
+}
+
+.campo__error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-xs);
+  margin-top: var(--espacio-xs);
+  color: var(--color-error);
+  font: var(--texto-pequeno);
+}
+
+.campo__icono {
+  flex: none;
+}
+
+.chip {
+  display: inline-block;
+  /* 12 px a los lados no está en la escala de 8: se arma con dos tokens. */
+  padding: var(--espacio-2xs) calc(var(--espacio-xs) + var(--espacio-2xs));
+  border-radius: var(--radio-sm);
+  font: var(--texto-etiqueta);
+}
+
+.chip--claro {
+  background-color: var(--color-crema-translucida);
+  color: var(--color-texto);
+}
+
+.chip--borde-claro {
+  border: 1px solid var(--color-borde-claro);
+  color: var(--color-texto-claro);
+}
+
+.chip--amarillo {
+  background-color: var(--color-amarillo);
+  color: var(--color-texto);
+}
+
+.insignia {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--espacio-lg);
+  height: var(--espacio-lg);
+  border-radius: 50%;
+  background-color: var(--color-verde-bosque);
+  color: var(--color-texto-claro);
+  font: var(--texto-insignia);
+}
+
+.insignia--amarillo {
+  background-color: var(--color-amarillo);
+  color: var(--color-texto);
+}
+
+/* drop-shadow (y no box-shadow) para que la sombra siga los dientes del borde. */
+.recibo {
+  filter: var(--sombra-recibo);
+}
+
+.recibo__cuerpo {
+  padding: var(--espacio-md);
+  background-color: var(--color-verde-bosque);
+  color: var(--color-texto-claro);
+}
+
+.recibo__texto-suave {
+  color: var(--color-texto-claro-suave);
+}
+
+.recibo__separador {
+  margin-block: var(--espacio-md) var(--espacio-sm);
+  border-top: 1.5px dashed var(--color-borde-claro-fuerte);
+}
+
+/* El SVG del dentado usa fill="currentColor": su color sale del CSS, no del HTML. */
+.recibo__dentado,
+.boleto__dentado {
+  width: 100%;
+  height: var(--espacio-xs);
+}
+
+.recibo__dentado {
+  color: var(--color-verde-bosque);
+}
+
+.boleto {
+  filter: var(--sombra-recibo-oscuro);
+}
+
+.boleto__cuerpo {
+  padding: var(--espacio-md);
+  border-radius: var(--radio-md) var(--radio-md) 0 0;
+  background-color: var(--color-crema);
+  color: var(--color-texto);
+}
+
+.boleto__separador {
+  position: relative;
+  margin: var(--espacio-sm) calc(-1 * var(--espacio-md));
+  border-top: 1.5px dashed var(--color-borde-fuerte);
+}
+
+/* Las muescas son círculos del color de fondo de Paquetes: parecen agujeros en el boleto. */
+.boleto__separador::before,
+.boleto__separador::after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--espacio-xs));
+  width: var(--espacio-sm);
+  height: var(--espacio-sm);
+  border-radius: 50%;
+  background-color: var(--color-verde-oscuro);
+}
+
+.boleto__separador::before {
+  left: calc(-1 * var(--espacio-xs));
+}
+
+.boleto__separador::after {
+  right: calc(-1 * var(--espacio-xs));
+}
+
+.boleto__dentado {
+  color: var(--color-crema);
+}
