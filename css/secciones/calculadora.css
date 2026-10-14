@@ -1,0 +1,186 @@
+.calculadora__intro {
+  margin-top: var(--espacio-sm);
+}
+
+/* z-index para quedar encima del recibo, que se mete 16 px debajo. */
+.calculadora__panel {
+  position: relative;
+  z-index: 1;
+  margin-top: var(--espacio-lg);
+  padding: var(--espacio-md);
+  border-radius: var(--radio-lg);
+  background-color: var(--color-arena);
+}
+
+.calculadora__etiqueta {
+  display: block;
+  font: var(--texto-etiqueta);
+}
+
+.calculadora__etiqueta--techo {
+  margin-top: var(--espacio-md);
+  margin-bottom: var(--espacio-xs);
+}
+
+.calculadora__valor {
+  display: flex;
+  align-items: baseline;
+  gap: var(--espacio-xs);
+  font: var(--texto-pequeno);
+}
+
+.calculadora__cifra {
+  font: var(--texto-cifra-lg);
+}
+
+/* El control mide 44 px para cumplir el área táctil, pero la pista visible es de 8.
+   Los márgenes negativos descuentan los 18 px de sobra arriba y abajo para que la
+   pista quede donde la maqueta: 16 px bajo el valor y 8 px sobre los límites. */
+.calculadora__control {
+  /* $4,200 entre $500 y $12,000; calculadora.js lo actualiza al mover el control. */
+  --progreso: 32.17%;
+  --sobrante: calc((var(--area-tactil) - var(--espacio-xs)) / 2);
+  display: block;
+  width: 100%;
+  height: var(--area-tactil);
+  margin-top: calc(var(--espacio-sm) - var(--sobrante));
+  margin-bottom: calc(var(--espacio-xs) - var(--sobrante));
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Las reglas de Chrome/Safari (-webkit-) y de Firefox (-moz-) van separadas: si se
+   juntan en un mismo selector, cada navegador descarta la regla completa. */
+.calculadora__control::-webkit-slider-runnable-track {
+  height: var(--espacio-xs);
+  border-radius: var(--radio-sm);
+  background: linear-gradient(to right, var(--color-verde-bosque) var(--progreso), var(--color-borde) var(--progreso));
+}
+
+.calculadora__control::-webkit-slider-thumb {
+  box-sizing: border-box;
+  width: var(--espacio-lg);
+  height: var(--espacio-lg);
+  /* Centra el pulgar de 32 px sobre la pista de 8. */
+  margin-top: calc((var(--espacio-xs) - var(--espacio-lg)) / 2);
+  border: 3px solid var(--color-verde-oscuro);
+  border-radius: 50%;
+  background-color: var(--color-amarillo);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* El foco va en el pulgar: alrededor del control completo (44 px de alto, encimado
+   al valor y a los límites por los márgenes negativos) tacharía esos textos. */
+.calculadora__control:focus-visible {
+  outline: none;
+}
+
+.calculadora__control:focus-visible::-webkit-slider-thumb {
+  outline: 3px solid var(--color-verde-bosque);
+  outline-offset: 2px;
+}
+
+.calculadora__control:focus-visible::-moz-range-thumb {
+  outline: 3px solid var(--color-verde-bosque);
+  outline-offset: 2px;
+}
+
+/* Firefox pinta la parte recorrida con su propio pseudo-elemento, sin --progreso. */
+.calculadora__control::-moz-range-track {
+  height: var(--espacio-xs);
+  border-radius: var(--radio-sm);
+  background-color: var(--color-borde);
+}
+
+.calculadora__control::-moz-range-progress {
+  height: var(--espacio-xs);
+  border-radius: var(--radio-sm);
+  background-color: var(--color-verde-bosque);
+}
+
+.calculadora__control::-moz-range-thumb {
+  box-sizing: border-box;
+  width: var(--espacio-lg);
+  height: var(--espacio-lg);
+  border: 3px solid var(--color-verde-oscuro);
+  border-radius: 50%;
+  background-color: var(--color-amarillo);
+}
+
+.calculadora__limites {
+  display: flex;
+  justify-content: space-between;
+  font: var(--texto-pequeno);
+}
+
+/* 16 px más angosto por lado y metido 16 px bajo el panel. */
+.calculadora__recibo {
+  margin: calc(-1 * var(--espacio-sm)) var(--espacio-sm) 0;
+}
+
+/* 40 px arriba: los 24 del recibo más los 16 que quedan tapados por el panel. */
+.calculadora__cuerpo {
+  padding-top: calc(var(--espacio-md) + var(--espacio-sm));
+}
+
+.calculadora__texto {
+  font: var(--texto-pequeno);
+}
+
+/* flex-wrap: a 320 px, "cada dos meses" baja completo a otra línea en vez de partirse. */
+.calculadora__monto {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--espacio-xs);
+  margin-top: var(--espacio-xs);
+  font: var(--texto-pequeno);
+}
+
+.calculadora__cifra-xl {
+  font: var(--texto-cifra-xl);
+  color: var(--color-amarillo);
+}
+
+.calculadora__hoy {
+  margin-top: var(--espacio-xs);
+}
+
+/* Tres columnas que se reparten el ancho, pero ninguna más angosta que su cifra:
+   "3.5 años" no cabe en un tercio exacto. Si a 320 px no caben las tres, el último
+   dato baja a otra línea en vez de encimarse o salirse del recibo. */
+.calculadora__datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-sm);
+}
+
+/* En el HTML la etiqueta va antes que la cifra para que el lector de pantalla diga
+   "ahorro por bimestre: $3,700"; en pantalla la cifra va arriba. */
+.calculadora__dato {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  font: var(--texto-pequeno);
+}
+
+.calculadora__cifra-sm {
+  font: var(--texto-cifra-sm);
+  white-space: nowrap;
+}
+
+.calculadora__explicacion {
+  margin-top: var(--espacio-xs);
+}
+
+.calculadora__nota {
+  margin-top: var(--espacio-md);
+  font: var(--texto-mini);
+}
+
+.calculadora__accion {
+  margin-top: var(--espacio-lg);
+}

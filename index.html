@@ -76,8 +76,62 @@
       <img class="hero__imagen" src="assets/img/hero-casa.jpg" alt="Casa familiar con paneles solares en el techo al atardecer" width="1024" height="765" fetchpriority="high">
     </section>
 
-    <section id="calculadora" aria-labelledby="calculadora-titulo">
-      <h2 id="calculadora-titulo">Calcula cuánto puedes ahorrar</h2>
+    <section id="calculadora" class="seccion" aria-labelledby="calculadora-titulo">
+      <div class="contenedor grilla">
+        <h2 id="calculadora-titulo">Calcula cuánto puedes ahorrar</h2>
+        <p class="calculadora__intro">Mueve el control con lo que pagas a la CFE cada dos meses y mira cuánto bajaría tu recibo.</p>
+
+        <div class="calculadora__panel">
+          <label class="calculadora__etiqueta" for="calculadora-recibo">Lo que pagas cada dos meses</label>
+          <p class="calculadora__valor"><span class="calculadora__cifra">$4,200</span> bimestral</p>
+          <input class="calculadora__control" id="calculadora-recibo" type="range" min="500" max="12000" step="100" value="4200" aria-valuetext="$4,200 cada dos meses">
+          <div class="calculadora__limites">
+            <span>$500</span>
+            <span>$12,000</span>
+          </div>
+          <p class="calculadora__etiqueta calculadora__etiqueta--techo" id="calculadora-techo">Tipo de techo</p>
+          <div class="selector" role="group" aria-labelledby="calculadora-techo">
+            <button type="button" class="selector__opcion" aria-pressed="true" data-techo="teja">Teja</button>
+            <button type="button" class="selector__opcion" aria-pressed="false" data-techo="losa">Losa</button>
+            <button type="button" class="selector__opcion" aria-pressed="false" data-techo="lamina">Lámina</button>
+          </div>
+        </div>
+
+        <div class="recibo calculadora__recibo">
+          <div class="recibo__cuerpo calculadora__cuerpo">
+            <div class="calculadora__resultado">
+              <p class="recibo__texto-suave calculadora__texto">Con Solmara pagarías</p>
+              <p class="calculadora__monto"><span class="calculadora__cifra-xl">$500</span> cada dos meses</p>
+              <p class="calculadora__texto calculadora__hoy">Hoy pagas <s>$4,200</s></p>
+              <div class="recibo__separador"></div>
+              <dl class="calculadora__datos">
+                <div class="calculadora__dato">
+                  <dt class="recibo__texto-suave">ahorro por bimestre</dt>
+                  <dd class="calculadora__cifra-sm">$3,700</dd>
+                </div>
+                <div class="calculadora__dato">
+                  <dt class="recibo__texto-suave">paneles</dt>
+                  <dd class="calculadora__cifra-sm">6</dd>
+                </div>
+                <div class="calculadora__dato">
+                  <dt class="recibo__texto-suave">retorno</dt>
+                  <dd class="calculadora__cifra-sm">3.5 años</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="calculadora__no-conviene" hidden>
+              <h3>Con este recibo, quizá todavía no te convenga</h3>
+              <p class="recibo__texto-suave calculadora__texto calculadora__explicacion">Tu consumo ya tiene subsidio de la CFE y los paneles tardarían mucho en pagarse. Si tu recibo sube, vuelve a calcular.</p>
+            </div>
+            <p class="recibo__texto-suave calculadora__nota">Estimación de ejemplo con datos ficticios.</p>
+          </div>
+          <svg class="recibo__dentado" viewBox="0 0 360 8" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0H360L355 8L350 0L345 8L340 0L335 8L330 0L325 8L320 0L315 8L310 0L305 8L300 0L295 8L290 0L285 8L280 0L275 8L270 0L265 8L260 0L255 8L250 0L245 8L240 0L235 8L230 0L225 8L220 0L215 8L210 0L205 8L200 0L195 8L190 0L185 8L180 0L175 8L170 0L165 8L160 0L155 8L150 0L145 8L140 0L135 8L130 0L125 8L120 0L115 8L110 0L105 8L100 0L95 8L90 0L85 8L80 0L75 8L70 0L65 8L60 0L55 8L50 0L45 8L40 0L35 8L30 0L25 8L20 0L15 8L10 0L5 8L0 0Z"/></svg>
+        </div>
+        <p class="visualmente-oculto" id="calculadora-anuncio" aria-live="polite"></p>
+
+        <a class="boton boton--primario boton--bloque calculadora__accion" href="#cotizacion">Pedir visita gratuita</a>
+        <a class="boton boton--primario boton--bloque calculadora__accion" href="#preguntas" hidden>Resolver mis dudas</a>
+      </div>
     </section>
 
     <section id="como-funciona" aria-labelledby="como-funciona-titulo">
