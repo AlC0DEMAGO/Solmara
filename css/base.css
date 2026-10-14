@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Cada componente define sus propios márgenes; así nada hereda los del navegador. */
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Sin esto, una imagen con width y height en el HTML se deforma al encogerse. */
+img {
+  height: auto;
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Evita que un correo o una palabra larga provoque desplazamiento horizontal. */
+p,
+li,
+h1,
+h2,
+h3,
+blockquote {
+  overflow-wrap: break-word;
+}
+
+body {
+  background-color: var(--color-crema);
+  color: var(--color-texto);
+  font: var(--texto-cuerpo);
+}
+
+h1 {
+  font: var(--texto-display);
+  letter-spacing: var(--tracking-titulos);
+  text-wrap: balance;
+}
+
+h2 {
+  font: var(--texto-h2);
+  letter-spacing: var(--tracking-titulos);
+  text-wrap: balance;
+}
+
+h3 {
+  font: var(--texto-h3);
+}
+
+a {
+  color: inherit;
+}
+
+/* Foco visible: el color cambia según el fondo para mantener al menos 3:1
+   (especificación, apartado 3, «Foco visible»). */
+
+:focus-visible {
+  outline: 3px solid var(--color-verde-bosque);
+  outline-offset: 2px;
+}
+
+.seccion--oscura :focus-visible {
+  outline-color: var(--color-amarillo);
+}
+
+.seccion--cielo :focus-visible {
+  outline-color: var(--color-verde-oscuro);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
