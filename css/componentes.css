@@ -45,6 +45,12 @@
   width: 100%;
 }
 
+/* El display de .boton le gana al estilo con que el navegador oculta [hidden];
+   esta regla, más específica, devuelve el efecto al atributo. */
+.boton[hidden] {
+  display: none;
+}
+
 /* Solo en dispositivos con puntero: en pantallas táctiles el hover se queda
    "pegado" después de tocar el botón. */
 @media (hover: hover) {
