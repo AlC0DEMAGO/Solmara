@@ -82,7 +82,8 @@ a {
   outline-offset: 2px;
 }
 
-.seccion--oscura :focus-visible {
+.seccion--oscura :focus-visible,
+.pie :focus-visible {
   outline-color: var(--color-amarillo);
 }
 
