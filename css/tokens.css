@@ -105,4 +105,6 @@
   --texto-etiqueta-fuerte: 600 0.875rem/1.25rem var(--fuente-texto); /* 14/20 */
   --texto-dato: 600 1rem/1.25rem var(--fuente-texto);                /* 16/20 */
   --texto-dato-fuerte: 700 1rem/1.25rem var(--fuente-titulos);       /* 16/20 */
+  --color-brillo-sol: rgba(255, 183, 3, 0.55);
+  --color-brillo-sol-suave: rgba(255, 183, 3, 0.18);
 }

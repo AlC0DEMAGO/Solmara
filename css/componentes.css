@@ -159,6 +159,11 @@
   flex: none;
 }
 
+/* Igual que en .boton: el display de .campo__error anularía el atributo hidden. */
+.campo__error[hidden] {
+  display: none;
+}
+
 .chip {
   display: inline-block;
   /* 12 px a los lados no está en la escala de 8: se arma con dos tokens. */

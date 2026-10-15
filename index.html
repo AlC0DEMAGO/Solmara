@@ -460,8 +460,97 @@
       </div>
     </section>
 
-    <section id="cotizacion" aria-labelledby="cotizacion-titulo">
-      <h2 id="cotizacion-titulo">Tu casa puede ser la siguiente</h2>
+    <section id="cotizacion" class="seccion seccion--cielo seccion--redondeada cotizacion" aria-labelledby="cotizacion-titulo">
+      <div class="contenedor grilla cotizacion__contenido">
+        <h2 id="cotizacion-titulo" class="cotizacion__titulo">Tu casa puede ser la siguiente</h2>
+        <p class="cotizacion__intro">Agenda una visita gratuita: revisamos tu techo y tu recibo, sin compromiso.</p>
+
+        <div class="cotizacion__prueba">
+          <div class="cotizacion__miniaturas">
+            <img class="cotizacion__miniatura" src="assets/img/proyecto-teja.jpg" alt="" width="44" height="44" loading="lazy">
+            <img class="cotizacion__miniatura" src="assets/img/proyecto-losa.jpg" alt="" width="44" height="44" loading="lazy">
+            <img class="cotizacion__miniatura" src="assets/img/proyecto-lamina.jpg" alt="" width="44" height="44" loading="lazy">
+          </div>
+          <p class="cotizacion__prueba-texto">Laura, la familia Rivera y Ernesto ya ahorran con Solmara.</p>
+        </div>
+
+        <div class="cotizacion__tarjeta">
+          <!-- method="dialog": fuera de un <dialog> el navegador no envía nada, así que sin
+               JavaScript ningún dato sale de la página. Con JavaScript, cotizacion.js maneja el envío. -->
+          <form class="cotizacion__formulario" method="dialog" novalidate>
+            <div class="cotizacion__resumen">
+              <div class="cotizacion__resumen-cabecera">
+                <p class="cotizacion__resumen-titulo">Tu cálculo</p>
+                <a class="cotizacion__ajustar" href="#calculadora">Ajustar</a>
+              </div>
+              <p class="cotizacion__resumen-cifras">
+                <span>Hoy <s>$4,200</s></span>
+                <span class="cotizacion__monto">$500</span>
+                <span>con Solmara, cada dos meses</span>
+              </p>
+              <p class="cotizacion__paquete" hidden>Paquete de interés: <span class="cotizacion__paquete-nombre"></span></p>
+            </div>
+
+            <div class="campo">
+              <label class="campo__etiqueta" for="cotizacion-nombre">Nombre</label>
+              <input class="campo__control" id="cotizacion-nombre" name="nombre" type="text" autocomplete="name" placeholder="Cómo te llamamos">
+              <p class="campo__error" id="cotizacion-nombre-error" hidden>
+                <svg class="campo__icono" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="7.5" x2="12" y2="13"/><circle cx="12" cy="16.5" r="1.25" fill="currentColor" stroke="none"/></svg>
+                Escribe tu nombre.
+              </p>
+            </div>
+
+            <div class="campo">
+              <label class="campo__etiqueta" for="cotizacion-telefono">Teléfono o WhatsApp</label>
+              <input class="campo__control" id="cotizacion-telefono" name="telefono" type="tel" autocomplete="tel" placeholder="10 dígitos" aria-describedby="cotizacion-telefono-ayuda">
+              <p class="campo__ayuda" id="cotizacion-telefono-ayuda">Te escribimos por WhatsApp o te llamamos, como prefieras.</p>
+              <p class="campo__error" id="cotizacion-telefono-error" hidden>
+                <svg class="campo__icono" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="7.5" x2="12" y2="13"/><circle cx="12" cy="16.5" r="1.25" fill="currentColor" stroke="none"/></svg>
+                Escribe un teléfono de 10 dígitos.
+              </p>
+            </div>
+
+            <div class="campo">
+              <label class="campo__etiqueta" for="cotizacion-cp">Código postal</label>
+              <input class="campo__control" id="cotizacion-cp" name="cp" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="Ej. 76000" aria-describedby="cotizacion-cp-ayuda">
+              <p class="campo__ayuda" id="cotizacion-cp-ayuda">Para confirmar que llegamos a tu zona.</p>
+              <p class="campo__error" id="cotizacion-cp-error" hidden>
+                <svg class="campo__icono" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="7.5" x2="12" y2="13"/><circle cx="12" cy="16.5" r="1.25" fill="currentColor" stroke="none"/></svg>
+                Escribe un código postal de 5 dígitos.
+              </p>
+            </div>
+
+            <div>
+              <p class="campo__etiqueta" id="cotizacion-techo">Tipo de techo</p>
+              <div class="selector" role="group" aria-labelledby="cotizacion-techo">
+                <button type="button" class="selector__opcion" aria-pressed="true" data-techo="teja">Teja</button>
+                <button type="button" class="selector__opcion" aria-pressed="false" data-techo="losa">Losa</button>
+                <button type="button" class="selector__opcion" aria-pressed="false" data-techo="lamina">Lámina</button>
+              </div>
+            </div>
+
+            <input type="hidden" name="recibo" value="4200">
+            <input type="hidden" name="techo" value="teja">
+            <input type="hidden" name="paquete" value="">
+
+            <div>
+              <button type="submit" class="boton boton--primario boton--bloque">Quiero mi visita gratuita</button>
+              <noscript><p class="cotizacion__sin-js">Este formulario de demostración necesita JavaScript para funcionar.</p></noscript>
+              <p class="cotizacion__garantia">Sin costo y sin compromiso. Te contactamos en menos de 24 horas.</p>
+              <p class="cotizacion__legal">Al enviar aceptas nuestro <a href="aviso-privacidad.html">aviso de privacidad</a>. Formulario de demostración: no se envía ningún dato.</p>
+            </div>
+          </form>
+
+          <div class="cotizacion__exito" hidden>
+            <h3 class="cotizacion__exito-titulo" tabindex="-1">¡Listo, <span class="cotizacion__exito-nombre"></span>!</h3>
+            <p class="cotizacion__exito-texto">Te contactaremos en menos de 24 horas al <span class="cotizacion__exito-telefono"></span>. Mientras tanto, puedes revisar las preguntas frecuentes.</p>
+            <p class="cotizacion__exito-nota">Demostración: no se envió ningún dato.</p>
+            <button type="button" class="boton boton--contorno boton--bloque cotizacion__exito-accion">Hacer otra solicitud</button>
+          </div>
+        </div>
+      </div>
+
+      <img class="cotizacion__imagen" src="assets/img/hero-casa.jpg" alt="Casa familiar con paneles solares al atardecer" width="1024" height="765" loading="lazy">
     </section>
   </main>
 
