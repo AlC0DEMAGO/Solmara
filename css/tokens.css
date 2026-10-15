@@ -102,4 +102,7 @@
   --color-borde-fuerte: rgba(11, 43, 31, 0.3);
   --texto-insignia: 700 1rem/1.5rem var(--fuente-titulos); /* 16/24 */
   --color-velo-foto: rgba(11, 43, 31, 0.88);
+  --texto-etiqueta-fuerte: 600 0.875rem/1.25rem var(--fuente-texto); /* 14/20 */
+  --texto-dato: 600 1rem/1.25rem var(--fuente-texto);                /* 16/20 */
+  --texto-dato-fuerte: 700 1rem/1.25rem var(--fuente-titulos);       /* 16/20 */
 }

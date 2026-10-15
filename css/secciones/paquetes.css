@@ -1,0 +1,120 @@
+.paquetes__intro {
+  margin-top: var(--espacio-sm);
+  color: var(--color-texto-claro-suave);
+}
+
+.paquetes__carrusel {
+  --ancho-boleto: 280px;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-sm);
+  /* Arriba y abajo hay espacio extra para que la sombra de los boletos no se corte
+     (un contenedor con desplazamiento recorta lo que se sale); los márgenes lo descuentan
+     para conservar las distancias de la maqueta: 32 px arriba y 24 px hasta los puntos.
+     El descuento de abajo va aquí y no en los puntos: en una grilla, un margen negativo
+     arriba de un elemento lo estira. */
+  margin: calc(var(--espacio-lg) - var(--espacio-sm)) calc(-1 * var(--margen-pagina)) calc(-1 * var(--espacio-xl));
+  /* A los lados, el espacio justo para que el primer y el último boleto también puedan
+     quedar al centro. El 50 % se mide sobre el contenedor sin los márgenes de página. */
+  padding: var(--espacio-sm) calc(50% + var(--margen-pagina) - var(--ancho-boleto) / 2) var(--espacio-xl);
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.paquetes__carrusel::-webkit-scrollbar {
+  display: none;
+}
+
+.paquetes__boleto {
+  flex: 0 0 var(--ancho-boleto);
+  scroll-snap-align: center;
+}
+
+.paquetes__boleto--lateral {
+  margin-top: var(--espacio-lg);
+}
+
+/* La banda ocupa la parte de arriba del Familiar: el cuerpo ya no lleva esquinas. */
+.paquetes__boleto--destacado .boleto__cuerpo {
+  border-radius: 0;
+}
+
+.paquetes__banda {
+  display: flex;
+  align-items: center;
+  min-height: var(--espacio-lg);
+  padding-inline: var(--espacio-md);
+  border-radius: var(--radio-md) var(--radio-md) 0 0;
+  background-color: var(--color-amarillo);
+  color: var(--color-texto);
+  font: var(--texto-etiqueta-fuerte);
+}
+
+.paquetes__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-sm);
+}
+
+.paquetes__nombre {
+  font: var(--texto-h3-grande);
+}
+
+.paquetes__paneles {
+  fill: var(--color-verde-bosque);
+}
+
+.paquetes__rango {
+  margin-top: var(--espacio-xs);
+  font: var(--texto-pequeno);
+}
+
+.paquetes__fila {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--espacio-sm);
+  padding-block: var(--espacio-2xs);
+  font: var(--texto-pequeno);
+}
+
+.paquetes__dato {
+  font: var(--texto-dato);
+  white-space: nowrap;
+}
+
+.paquetes__dato--fuerte {
+  font: var(--texto-dato-fuerte);
+}
+
+.paquetes__accion {
+  margin-top: var(--espacio-md);
+}
+
+.paquetes__puntos {
+  display: flex;
+  justify-content: center;
+  gap: var(--espacio-xs);
+  margin-top: var(--espacio-md);
+}
+
+.paquetes__punto {
+  width: var(--espacio-xs);
+  height: var(--espacio-xs);
+  border-radius: 50%;
+  background-color: var(--color-borde-claro-fuerte);
+}
+
+.paquetes__punto--activo {
+  width: var(--espacio-md);
+  border-radius: var(--radio-sm);
+  background-color: var(--color-amarillo);
+}
+
+.paquetes__nota {
+  margin-top: var(--espacio-md);
+  color: var(--color-texto-claro-suave);
+  font: var(--texto-mini);
+}

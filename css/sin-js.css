@@ -3,3 +3,8 @@
 .encabezado__boton-menu {
   display: none;
 }
+
+/* Los puntos de Paquetes solo indican el boleto centrado si paquetes.js los mueve. */
+.paquetes__puntos {
+  display: none;
+}
