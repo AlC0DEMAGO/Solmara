@@ -17,21 +17,28 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/componentes.css">
+  <link rel="stylesheet" href="css/secciones/hero.css">
 </head>
 <body>
-  <header>
-    <a href="index.html">
-      <img src="assets/logo/logo-solmara-sobre-rosa.png" alt="Solmara" width="540" height="176">
+  <header class="encabezado">
+    <a class="encabezado__inicio" href="index.html">
+      <img class="encabezado__logo" src="assets/logo/logo-solmara-sobre-rosa.png" alt="Solmara" width="540" height="176">
     </a>
   </header>
 
   <main>
-    <h1>Aviso de privacidad</h1>
-    <p>Solmara es un proyecto ficticio hecho con fines de portafolio.</p>
-    <p>El formulario de cotización es de demostración: no envía ni guarda ningún dato.</p>
-    <p>Este sitio no usa cookies de seguimiento.</p>
-    <p>Las tipografías se cargan desde Google Fonts, por lo que tu navegador se conecta a servidores de Google para descargarlas.</p>
-    <p><a href="index.html">Volver al inicio</a></p>
+    <section class="seccion seccion--cielo hero" aria-labelledby="aviso-titulo">
+      <div class="contenedor grilla hero__contenido">
+        <h1 id="aviso-titulo">Aviso de privacidad</h1>
+        <p>Solmara es un proyecto ficticio hecho con fines de portafolio.</p>
+        <p>El formulario de cotización es de demostración: no envía ni guarda ningún dato.</p>
+        <p>Este sitio no usa cookies de seguimiento.</p>
+        <p>Las tipografías se cargan desde Google Fonts, por lo que tu navegador se conecta a servidores de Google para descargarlas.</p>
+        <div class="hero__acciones">
+          <a class="boton boton--oscuro boton--bloque" href="index.html">Volver al inicio</a>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
