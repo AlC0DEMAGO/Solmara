@@ -1,0 +1,84 @@
+/* Sube lo que miden sus esquinas para quedar encimada sobre Paquetes: así en las
+   esquinas redondeadas se ve el verde oscuro de abajo y no el crema de la página.
+   position: relative la pinta siempre encima de Paquetes en la zona encimada. */
+.preguntas {
+  position: relative;
+  margin-top: calc(-1 * var(--radio-xl));
+  background-color: var(--color-crema);
+}
+
+.preguntas__intro {
+  margin-top: var(--espacio-sm);
+}
+
+.preguntas__lista {
+  margin-top: var(--espacio-md);
+  border-top: 1px solid var(--color-borde);
+}
+
+.pregunta {
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.pregunta__resumen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-sm);
+  padding-block: var(--espacio-md);
+  font: var(--texto-cita);
+  list-style: none;
+  cursor: pointer;
+}
+
+/* Safari dibuja el triángulo con su propio pseudo-elemento: list-style no lo quita. */
+.pregunta__resumen::-webkit-details-marker {
+  display: none;
+}
+
+.pregunta__icono {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--espacio-lg);
+  height: var(--espacio-lg);
+  border-radius: 50%;
+  background-color: var(--color-arena);
+  color: var(--color-texto);
+}
+
+/* Abierta: se oculta la línea vertical del "+" (queda "−") y el círculo es amarillo. */
+.pregunta[open] .pregunta__icono {
+  background-color: var(--color-amarillo);
+}
+
+.pregunta[open] .pregunta__vertical {
+  display: none;
+}
+
+@media (hover: hover) {
+  .pregunta:not([open]) .pregunta__resumen:hover .pregunta__icono {
+    background-color: var(--color-amarillo);
+  }
+}
+
+.pregunta__respuesta {
+  margin-bottom: var(--espacio-md);
+  padding-right: var(--espacio-xl);
+}
+
+.preguntas__ayuda {
+  margin-top: var(--espacio-lg);
+  padding: var(--espacio-md);
+  border-radius: var(--radio-lg);
+  background-color: var(--color-arena);
+}
+
+.preguntas__ayuda-texto {
+  margin-top: var(--espacio-xs);
+}
+
+.preguntas__ayuda-accion {
+  margin-top: var(--espacio-sm);
+}

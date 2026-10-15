@@ -277,7 +277,7 @@
       </div>
     </section>
 
-    <section id="paquetes" class="seccion seccion--oscura seccion--redondeada" aria-labelledby="paquetes-titulo">
+    <section id="paquetes" class="seccion seccion--oscura seccion--redondeada paquetes" aria-labelledby="paquetes-titulo">
       <div class="contenedor grilla">
         <h2 id="paquetes-titulo">Así quedaría tu recibo</h2>
         <p class="paquetes__intro">Tres paquetes según lo que pagas a la CFE cada dos meses. Todos incluyen instalación, trámite del medidor y monitoreo en la app.</p>
@@ -372,8 +372,92 @@
       </div>
     </section>
 
-    <section id="preguntas" aria-labelledby="preguntas-titulo">
-      <h2 id="preguntas-titulo">Preguntas frecuentes</h2>
+    <section id="preguntas" class="seccion seccion--redondeada preguntas" aria-labelledby="preguntas-titulo">
+      <div class="contenedor grilla">
+        <h2 id="preguntas-titulo">Preguntas frecuentes</h2>
+        <p class="preguntas__intro">Lo que más nos preguntan antes de dar el paso.</p>
+
+        <div class="preguntas__lista">
+          <details class="pregunta" open>
+            <summary class="pregunta__resumen">
+              ¿Me conviene si pago poco de luz?
+              <span class="pregunta__icono" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line class="pregunta__vertical" x1="12" y1="6" x2="12" y2="18"/>
+                  <line x1="6" y1="12" x2="18" y2="12"/>
+                </svg>
+              </span>
+            </summary>
+            <p class="pregunta__respuesta">Depende de tu tarifa. Si pagas menos de unos $1,500 cada dos meses, tu luz ya tiene subsidio de la CFE y los paneles tardarían mucho en pagarse. Donde más convienen es en casas con tarifa DAC o con consumo alto por aire acondicionado.</p>
+          </details>
+          <details class="pregunta">
+            <summary class="pregunta__resumen">
+              ¿Puedo instalar paneles si mi techo es de teja?
+              <span class="pregunta__icono" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line class="pregunta__vertical" x1="12" y1="6" x2="12" y2="18"/>
+                  <line x1="6" y1="12" x2="18" y2="12"/>
+                </svg>
+              </span>
+            </summary>
+            <p class="pregunta__respuesta">Sí. Usamos soportes especiales que se fijan a la estructura sin cargar el peso en las tejas, y sellamos cada punto de anclaje para evitar filtraciones. La teja de barro es más frágil, por eso esa instalación cuesta un poco más.</p>
+          </details>
+          <details class="pregunta">
+            <summary class="pregunta__resumen">
+              ¿Qué pasa en días nublados o de noche?
+              <span class="pregunta__icono" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line class="pregunta__vertical" x1="12" y1="6" x2="12" y2="18"/>
+                  <line x1="6" y1="12" x2="18" y2="12"/>
+                </svg>
+              </span>
+            </summary>
+            <p class="pregunta__respuesta">Tu casa sigue conectada a la red de la CFE. La energía que produces de más durante el día se registra en tu medidor bidireccional y se descuenta de lo que consumes de noche o en días nublados.</p>
+          </details>
+          <details class="pregunta">
+            <summary class="pregunta__resumen">
+              ¿Cuánto tarda el trámite con la CFE?
+              <span class="pregunta__icono" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line class="pregunta__vertical" x1="12" y1="6" x2="12" y2="18"/>
+                  <line x1="6" y1="12" x2="18" y2="12"/>
+                </svg>
+              </span>
+            </summary>
+            <p class="pregunta__respuesta">La instalación toma un día. El cambio a medidor bidireccional depende de la CFE y suele tardar algunas semanas. Nosotros hacemos todo el trámite por ti.</p>
+          </details>
+          <details class="pregunta">
+            <summary class="pregunta__resumen">
+              ¿Qué mantenimiento necesitan?
+              <span class="pregunta__icono" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line class="pregunta__vertical" x1="12" y1="6" x2="12" y2="18"/>
+                  <line x1="6" y1="12" x2="18" y2="12"/>
+                </svg>
+              </span>
+            </summary>
+            <p class="pregunta__respuesta">Poco: limpiar el polvo de los paneles de vez en cuando y una revisión técnica cada uno o dos años. Los paneles suelen durar más de 25 años.</p>
+          </details>
+          <details class="pregunta">
+            <summary class="pregunta__resumen">
+              ¿Puedo pagar a meses?
+              <span class="pregunta__icono" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line class="pregunta__vertical" x1="12" y1="6" x2="12" y2="18"/>
+                  <line x1="6" y1="12" x2="18" y2="12"/>
+                </svg>
+              </span>
+            </summary>
+            <p class="pregunta__respuesta">Sí. Todos los paquetes se pueden pagar en 24 mensualidades, y lo que ahorras en tu recibo ayuda a cubrir buena parte de cada pago.</p>
+          </details>
+        </div>
+
+        <div class="preguntas__ayuda">
+          <h3>¿Tienes otra duda?</h3>
+          <p class="preguntas__ayuda-texto">Te responde una persona del equipo, no un robot.</p>
+          <a class="boton boton--secundario boton--bloque preguntas__ayuda-accion" href="#cotizacion">Hablar con un asesor</a>
+        </div>
+      </div>
     </section>
 
     <section id="cotizacion" aria-labelledby="cotizacion-titulo">
