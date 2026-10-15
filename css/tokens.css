@@ -93,12 +93,13 @@
   }
 }
 
-/* Agregados en la Fase 1 (apartado 2 de la especificación): valores que los
-   componentes necesitan y que el bloque original no tenía. */
+/* Agregados después (apartado 2 de la especificación, «Tokens agregados»): valores
+   que los componentes y las secciones necesitan y que el bloque original no tenía. */
 :root {
   --color-hover-contorno: rgba(11, 43, 31, 0.06);
   --color-borde-claro-fuerte: rgba(255, 251, 240, 0.4);
   --color-crema-translucida: rgba(255, 251, 240, 0.92);
   --color-borde-fuerte: rgba(11, 43, 31, 0.3);
   --texto-insignia: 700 1rem/1.5rem var(--fuente-titulos); /* 16/24 */
+  --color-velo-foto: rgba(11, 43, 31, 0.88);
 }

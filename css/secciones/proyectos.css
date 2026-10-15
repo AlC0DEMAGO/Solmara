@@ -1,0 +1,86 @@
+/* Las fotos van de orilla a orilla en móvil: la sección no lleva margen lateral y
+   solo el encabezado conserva el suyo. */
+.proyectos {
+  padding-inline: 0;
+}
+
+.proyectos__encabezado {
+  padding-inline: var(--margen-pagina);
+}
+
+.proyectos__intro {
+  margin-top: var(--espacio-sm);
+}
+
+.proyectos__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  margin-top: var(--espacio-lg);
+}
+
+.proyecto {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+}
+
+/* El degradado es ::before (y no ::after) para quedar encima de la foto pero debajo
+   del chip y del texto, que vienen después en el HTML y también están posicionados.
+   Llega a su máximo al 60 % (la maqueta lo hacía al 100 %): así el porcentaje
+   amarillo, que va a media foto, tiene al menos 3:1 sobre las zonas claras. */
+.proyecto::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to bottom, transparent 20%, var(--color-velo-foto) 60%);
+}
+
+.proyecto__imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.proyecto--teja .proyecto__imagen {
+  object-position: 62% 50%;
+}
+
+.proyecto__chip {
+  position: absolute;
+  top: var(--espacio-sm);
+  left: var(--espacio-sm);
+}
+
+.proyecto__pie {
+  position: absolute;
+  right: var(--espacio-sm);
+  bottom: var(--espacio-md);
+  left: var(--espacio-sm);
+  color: var(--color-texto-claro);
+}
+
+.proyecto__resultado {
+  display: flex;
+  align-items: baseline;
+  gap: var(--espacio-xs);
+  font: var(--texto-pequeno);
+}
+
+.proyecto__porcentaje {
+  font: var(--texto-cifra-xl);
+  letter-spacing: var(--tracking-titulos);
+  color: var(--color-amarillo);
+}
+
+/* 12 px no está en la escala de 8: se arma con dos tokens. */
+.proyecto__cita {
+  margin-top: calc(var(--espacio-xs) + var(--espacio-2xs));
+  font: var(--texto-cita);
+}
+
+.proyecto__nombre {
+  margin-top: var(--espacio-xs);
+  color: var(--color-texto-claro-suave);
+  font: var(--texto-pequeno);
+}
