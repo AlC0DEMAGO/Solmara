@@ -1,3 +1,9 @@
+/* Preguntas se encima sobre el final de esta sección lo que miden sus esquinas: ese
+   espacio extra queda tapado y el visible bajo la nota sigue siendo el de siempre. */
+.paquetes {
+  padding-bottom: calc(var(--padding-seccion) + var(--radio-xl));
+}
+
 .paquetes__intro {
   margin-top: var(--espacio-sm);
   color: var(--color-texto-claro-suave);
