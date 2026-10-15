@@ -1,0 +1,170 @@
+/* El brillo del sol es ::before; el contenido lleva position: relative para pintarse
+   encima de él. overflow: hidden recorta la parte del brillo que sale de la sección. */
+.cotizacion {
+  position: relative;
+  overflow: hidden;
+  padding: var(--padding-seccion) 0 0;
+}
+
+.cotizacion::before {
+  content: "";
+  position: absolute;
+  /* Posición y tamaño de la maqueta: solo asoma una parte del brillo en la esquina. */
+  top: -120px;
+  right: -140px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background-image: radial-gradient(circle, var(--color-brillo-sol) 0%, var(--color-brillo-sol-suave) 40%, transparent 70%);
+}
+
+.cotizacion__contenido {
+  position: relative;
+  padding-inline: var(--margen-pagina);
+  padding-bottom: var(--espacio-lg);
+}
+
+.cotizacion__titulo {
+  font: var(--texto-display);
+}
+
+.cotizacion__intro {
+  margin-top: var(--espacio-sm);
+}
+
+.cotizacion__prueba {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-sm);
+  margin-top: var(--espacio-md);
+}
+
+.cotizacion__miniaturas {
+  display: flex;
+  flex: none;
+}
+
+/* aspect-ratio: 1 las hace cuadradas aunque las fotos sean rectangulares; object-fit
+   recorta la foto en vez de deformarla. */
+.cotizacion__miniatura {
+  aspect-ratio: 1;
+  border: 2px solid var(--color-crema);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 12 px de encimado no está en la escala de 8: se arma con dos tokens. */
+.cotizacion__miniatura + .cotizacion__miniatura {
+  margin-left: calc(-1 * (var(--espacio-xs) + var(--espacio-2xs)));
+}
+
+.cotizacion__prueba-texto {
+  font: var(--texto-pequeno);
+}
+
+.cotizacion__tarjeta {
+  margin-top: var(--espacio-lg);
+  padding: var(--espacio-md);
+  border-radius: var(--radio-lg);
+  background-color: var(--color-crema);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.cotizacion__formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-md);
+}
+
+/* cotizacion.js oculta el formulario al mostrar el éxito; el display: flex de arriba
+   anularía el atributo hidden. */
+.cotizacion__formulario[hidden] {
+  display: none;
+}
+
+.cotizacion__resumen {
+  padding: var(--espacio-sm);
+  border-radius: var(--radio-md);
+  background-color: var(--color-arena);
+}
+
+.cotizacion__resumen-cabecera {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font: var(--texto-etiqueta);
+}
+
+/* "Ajustar" no está dentro de una oración, así que necesita un área táctil de 44 px:
+   la da un ::after invisible, sin cambiar cómo se ve ni mover nada. */
+.cotizacion__ajustar {
+  position: relative;
+}
+
+.cotizacion__ajustar::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: var(--area-tactil);
+  transform: translateY(-50%);
+}
+
+.cotizacion__resumen-cifras {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--espacio-xs);
+  margin-top: var(--espacio-xs);
+  font: var(--texto-pequeno);
+}
+
+.cotizacion__monto {
+  font: var(--texto-cifra-sm);
+  color: var(--color-verde-bosque);
+}
+
+.cotizacion__paquete {
+  margin-top: var(--espacio-xs);
+  font: var(--texto-pequeno);
+}
+
+.cotizacion__sin-js {
+  margin-top: var(--espacio-sm);
+  font: var(--texto-etiqueta);
+}
+
+.cotizacion__garantia {
+  margin-top: var(--espacio-sm);
+  font: var(--texto-pequeno);
+}
+
+.cotizacion__legal {
+  margin-top: var(--espacio-xs);
+  font: var(--texto-mini);
+}
+
+.cotizacion__exito-titulo {
+  font: var(--texto-h3-grande);
+}
+
+.cotizacion__exito-texto,
+.cotizacion__exito-nota {
+  margin-top: var(--espacio-sm);
+}
+
+.cotizacion__exito-nota {
+  font: var(--texto-pequeno);
+}
+
+.cotizacion__exito-accion {
+  margin-top: var(--espacio-md);
+}
+
+/* Igual que en el hero: la parte de arriba de la foto se funde con el cielo. */
+.cotizacion__imagen {
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 28%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 28%);
+}
