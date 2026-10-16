@@ -85,5 +85,12 @@ export function iniciarCalculadora() {
     });
   });
 
+  // El techo elegido en el formulario se refleja aquí sin anunciar ni emitir: si la
+  // calculadora respondiera con otro evento, los dos módulos se avisarían en ciclo.
+  document.addEventListener('techo:elegido', ({ detail }) => {
+    techo = detail.techo;
+    actualizar({ emitir: false });
+  });
+
   actualizar({ emitir: true });
 }
