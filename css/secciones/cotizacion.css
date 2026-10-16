@@ -125,6 +125,12 @@
   color: var(--color-verde-bosque);
 }
 
+/* Si no conviene, no hay ahorro que mostrar: el recibo de hoy deja de verse tachado. */
+.cotizacion__resumen-cifras--sin-ahorro .cotizacion__hoy {
+  text-decoration: none;
+}
+
+.cotizacion__aviso,
 .cotizacion__paquete {
   margin-top: var(--espacio-xs);
   font: var(--texto-pequeno);
