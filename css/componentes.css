@@ -51,6 +51,12 @@
   display: none;
 }
 
+.boton--pequeno {
+  min-height: var(--area-tactil);
+  padding: 0 var(--espacio-sm);
+  font: var(--texto-etiqueta-fuerte);
+}
+
 /* Solo en dispositivos con puntero: en pantallas táctiles el hover se queda
    "pegado" después de tocar el botón. */
 @media (hover: hover) {
